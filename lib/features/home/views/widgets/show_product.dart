@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lookchin_app/constants/constants.dart';
+import 'package:lookchin_app/features/home/view_models/product_provider.dart';
 import 'package:lookchin_app/utils/simple_widgets.dart';
 
 import '../../models/product_model.dart';
@@ -13,9 +14,11 @@ class ShowProduct extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+   
     return SafeArea(
       child: RefreshIndicator(
         onRefresh: () async {
+          ref.watch(productProviders.notifier).fetchProduct();
           // ref.watch(productProvider.notifier).fetchProduct();
         },
         child: ListView.separated(
@@ -23,6 +26,7 @@ class ShowProduct extends ConsumerWidget {
           padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 10.w),
           itemCount: data.length + 1,
           itemBuilder: (context, index) {
+
             if (index == data.length) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),

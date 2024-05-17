@@ -11,6 +11,7 @@ import 'langauge/langauge_type.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     const ProviderScope(
       child: MyApp(),
@@ -49,6 +50,7 @@ class MyApp extends ConsumerWidget {
             theme: ThemeData(
               useMaterial3: true,
               scaffoldBackgroundColor: Colors.white,
+              
             ),
             // home: const MyHomePage(),
             // home: const SplashScreen(),

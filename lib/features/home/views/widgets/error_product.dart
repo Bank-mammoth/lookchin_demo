@@ -19,7 +19,8 @@ class ErrorProduct extends ConsumerWidget {
           SizedBox(height: 20.h),
           OutlinedButton(
               onPressed: () {
-                ref.watch(productProvider.notifier).fetchProduct();
+                // ref.watch(productProvider.notifier).fetchProduct();
+                ref.watch(productProviders.notifier).fetchProduct();
               },
               child: ZimpleWidgets.zText('Please Retry!'))
         ],

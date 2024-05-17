@@ -20,3 +20,11 @@ class ProducstRepository {
     }
   }
 }
+
+
+// @riverpod
+// ProducstRepository productRepository(ProductRepositoryRef ref) {
+//   return ProducstRepository(
+//       productApiService: ref.watch(productApiServiceProvider));
+// }
+// productRepositoryProvider

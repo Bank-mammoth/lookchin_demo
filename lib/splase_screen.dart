@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lookchin_app/constants/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../utils/simple_widgets.dart';
 
@@ -17,9 +18,18 @@ class SplashScreen extends ConsumerStatefulWidget {
 class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 3200), () {
-      context.go("/tab/home");
+    checkLogin().then((value) {
+      if (value!) {
+        Future.delayed(const Duration(milliseconds: 3200), () {
+          context.go("/tab/home");
+        });
+      } else {
+        Future.delayed(const Duration(milliseconds: 3200), () {
+          context.go("/onboard");
+        });
+      }
     });
+
     super.initState();
   }
 
@@ -39,5 +49,12 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
         ),
       ),
     ));
+  }
+
+  Future<bool?> checkLogin() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool logedin = prefs.getBool(Preference.loggedin) ?? false;
+    print('login +> $logedin');
+    return logedin;
   }
 }

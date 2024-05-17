@@ -137,4 +137,5 @@ enum Category {
   jewelery,
   menClothing,
   womenClothing,
+  all,
 }

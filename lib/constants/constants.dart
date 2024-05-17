@@ -7,10 +7,10 @@ class FontSize {
   static double displaySmall = 22.sp;
   static double headlineLarge = 20.sp;
   static double headline = 18.sp;
-  static double body = 16.sp;
-  static double bodySmall = 14.sp;
-  static double title = 12.sp;
-  static double titleSmall = 10.sp;
+  static double title = 16.sp;
+  static double titleSmall = 14.sp;
+  static double body = 12.sp;
+  static double bodySmall = 10.sp;
 }
 
 //color
@@ -23,7 +23,11 @@ const backgroundGrey = Color.fromARGB(255, 237, 237, 237);
 Widget vertical(double h) {
   return SizedBox(height: h.h);
 }
+
 Widget horizontal(double w) {
   return SizedBox(width: w.w);
 }
 
+class Preference {
+  static  String  loggedin = "loggedin";
+}
