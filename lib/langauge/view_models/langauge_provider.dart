@@ -25,17 +25,20 @@
 
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lookchin_app/langauge/langauge_type.dart';
+import 'package:lookchin_app/langauge/view_models/langauge_type.dart';
 
 class LanguageNotifier extends StateNotifier<LanguageType> {
   LanguageNotifier() : super(EngType());
 
-  void toggleLanguage() {
-    if (state is EngType) {
-      state = ThaiType();
-    } else {
-      state = EngType();
-    }
+  void toggleLanguage(newLang) { 
+  // if (state is EngType) {
+  //   print(state is EngType);
+  //     // state = ThaiType();
+  //   } else {
+  //     // state = EngType();
+  //   }
+    state = newLang;
+  
   }
 }
 final languageProvider = StateNotifierProvider<LanguageNotifier, LanguageType>((ref) => LanguageNotifier());

@@ -48,7 +48,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
                       SizedBox(width: 10.w),
                       GestureDetector(
                           onTap: () {
-                            context.push('/tab/home/listchat');
+                            context.push('/listchat');
                           },
                           child: const Icon(Icons.chat))
                     ],
@@ -60,7 +60,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
           Padding(
             padding: const EdgeInsets.only(bottom: 10.0),
             child: SearchBarCustom(
-              onTap: () => context.push("/tab/home/search"),
+              onTap: () => context.push("/search"),
               readOnly: true,
             ),
           ),
@@ -111,7 +111,7 @@ class _MyHomePageState extends ConsumerState<MyHomePage> {
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.r)),
         onPressed: () {
-         context.push('/tab/home/productadd');
+         context.push('/productadd');
         },
         child: const Icon(
           Icons.add,

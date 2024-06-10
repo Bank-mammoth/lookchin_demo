@@ -299,6 +299,7 @@ class SearchBarCustom extends ConsumerStatefulWidget {
   final VoidCallback? removeText;
   final TextEditingController? textcontroller;
   final String? hintText;
+  final Widget? prefixIcons;
   const SearchBarCustom({
     super.key,
     this.readOnly = false,
@@ -307,6 +308,7 @@ class SearchBarCustom extends ConsumerStatefulWidget {
     this.onChanged,
     this.textcontroller,
     this.hintText,
+    this.prefixIcons,
   });
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -314,6 +316,8 @@ class SearchBarCustom extends ConsumerStatefulWidget {
 }
 
 class _SearchBarCustomState extends ConsumerState<SearchBarCustom> {
+
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -325,11 +329,11 @@ class _SearchBarCustomState extends ConsumerState<SearchBarCustom> {
         readOnly: widget.readOnly ?? false,
         textAlignVertical: TextAlignVertical.center, // จัดกึ่งกลางแนวตั้ง
         textAlign: TextAlign.start, // จัดซ้ายแนวนอน
-        style: TextStyle(fontSize: FontSize.bodySmall),
+        style: TextStyle(fontSize: FontSize.body),
         decoration: InputDecoration(
           hintText: widget.hintText ?? "Search...",
-          hintStyle: TextStyle(fontSize: FontSize.bodySmall, height: 0.7.h),
-          prefixIcon: const Icon(Icons.search),
+          hintStyle: TextStyle(fontSize: FontSize.body, height: 0.7.h),
+          prefixIcon: widget.prefixIcons ??const Icon(Icons.search),
           suffixIcon: widget.removeText != null
               ? GestureDetector(
                   onTap: widget.removeText,

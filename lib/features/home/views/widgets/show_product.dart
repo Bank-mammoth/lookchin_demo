@@ -39,7 +39,7 @@ class ShowProduct extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(10),
                 onTap: () {
                   // Example navigation command
-                  context.go('/tab/home/detailproduct');
+                  context.push('/detailproduct');
                 },
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,

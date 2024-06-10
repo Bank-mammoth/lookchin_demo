@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lookchin_app/constants/constants.dart';
+import 'package:lookchin_app/utils/custom_textfield.dart';
 import 'package:lookchin_app/utils/simple_widgets.dart';
 
 class ProductAddScreen extends StatelessWidget {
@@ -54,13 +55,17 @@ class ProductAddScreen extends StatelessWidget {
                         ),
                       ),
                       vertical(20),
-                      const TextField(
-                        decoration: InputDecoration(hintText: "Title"),
-                      ),
+                      CustomTextField(
+                        hintText: "Title",
+                        hintontSize: FontSize.title,
+                        underLine: true,
+                        ),
                       vertical(20),
-                      const TextField(
-                        decoration: InputDecoration(hintText: "\$ Price"),
-                      ),
+                       CustomTextField(
+                        hintText: "\$ Price",
+                        hintontSize: FontSize.title,
+                        underLine: true,
+                        ),
                       vertical(30),
                       Container(
                         width: 1.sw,
@@ -72,11 +77,11 @@ class ProductAddScreen extends StatelessWidget {
                             width: 1.0,
                           ),
                         ),
+                 
                         child: const TextField(
                           maxLength: 2000,
                           decoration: InputDecoration(
-                            hintText:
-                                "- Item Name (Brand)\n- Purchase Date\n- Item Condition (ex. Excellent/Good/Fair/Poor)\n- Usage Signs (Minimal/Slight/Noticeable)\n- Defects (None/Present)\n\nPlease fill in the detailed information about the item you are listing. (Trading of prohibited items may be restricted.)",
+                            hintText:"- Item Name (Brand)\n- Purchase Date\n- Item Condition (ex. Excellent/Good/Fair/Poor)\n- Usage Signs (Minimal/Slight/Noticeable)\n- Defects (None/Present)\n\nPlease fill in the detailed information about the item you are listing. (Trading of prohibited items may be restricted.)",                             
                             hintMaxLines:
                                 15, // Set this to a value that fits your content
                             border: InputBorder.none,

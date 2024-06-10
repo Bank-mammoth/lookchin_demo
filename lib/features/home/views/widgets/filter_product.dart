@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookchin_app/constants/constants.dart';
 import 'package:lookchin_app/features/home/models/product_model.dart';
 
 import '../../../../utils/simple_widgets.dart';
@@ -10,16 +12,30 @@ class FilterProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Wrap(
-      spacing: 30,
-      runSpacing: 5,
-      children: [
-        FilterButton(filter: Category.all),
-        FilterButton(filter: Category.menClothing),
-        FilterButton(filter: Category.womenClothing),
-        FilterButton(filter: Category.jewelery),
-        FilterButton(filter: Category.electronics),
-      ],
+    List listCat = [
+      const FilterButton(filter: Category.all),
+      const FilterButton(filter: Category.menClothing),
+      const FilterButton(filter: Category.womenClothing),
+      const FilterButton(filter: Category.jewelery),
+      const FilterButton(filter: Category.electronics),
+    ];
+
+    return SizedBox(
+      height: 20.h,
+      child: ListView.builder(
+        padding:  EdgeInsets.only(right: 20.sp),
+          shrinkWrap: true,
+          physics: const ClampingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          itemCount: listCat.length,
+          itemBuilder: (context, index) {
+            return Row(
+              children: [
+                horizontal(20),
+                listCat[index],
+              ],
+            );
+          })
     );
   }
 }

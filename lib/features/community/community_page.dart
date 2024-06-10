@@ -2,7 +2,6 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookchin_app/constants/constants.dart';
-import 'package:lookchin_app/features/community/widgets/show_botton_Sheet.dart';
 import 'package:lookchin_app/features/community/widgets/show_card_commu.dart';
 import 'package:lookchin_app/features/community/widgets/show_categoly.dart';
 import 'package:lookchin_app/utils/simple_widgets.dart';
@@ -25,7 +24,6 @@ class CommunitiesPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // ZimpleWidgets.arrowback(horizontal: 10),
                   const SearchBarCustom(),
                   horizontal(20),
                   GestureDetector(

@@ -35,7 +35,7 @@ class CustomRow extends StatelessWidget {
           ],
           ZimpleWidgets.zText(
             hearder,
-            fontSize: FontSize.bodySmall,
+            fontSize: FontSize.titleSmall,
             color: colorGrey,
           ),
           if (untap != null)
@@ -43,7 +43,7 @@ class CustomRow extends StatelessWidget {
               onTap: untap,
               child: ZimpleWidgets.zText(
                 "x",
-                fontSize: FontSize.bodySmall,
+                fontSize: FontSize.body,
               ),
             )
         ],

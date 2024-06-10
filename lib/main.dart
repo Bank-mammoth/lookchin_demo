@@ -5,8 +5,7 @@ import 'package:lookchin_app/generated/l10n.dart';
 import 'package:lookchin_app/router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'langauge/langauge_provider.dart';
-import 'langauge/langauge_type.dart';
+import 'langauge/view_models/langauge_provider.dart';
 
 
 
@@ -39,11 +38,11 @@ class MyApp extends ConsumerWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate
             ],
-            supportedLocales: const [Locale('en', ''), Locale('th', '')],
-            locale: switch (langauge) {
-              ThaiType() => const Locale('en'),
-              EngType() => const Locale('th'),
-              LanguageType() => const Locale('en'),
+            supportedLocales: const [Locale('en'), Locale('th')],
+            locale: switch (langauge.name) {
+              "en" => const Locale('en'),
+              "th" => const Locale('th'),
+              String() => throw UnimplementedError(),
             },
             title: 'Flutter Demo',
             debugShowCheckedModeBanner: false,

@@ -23,8 +23,8 @@ class MainNavScreen extends StatefulWidget {
 class _MainNavScreenState extends State<MainNavScreen> {
   final List<String> _tabs = [
     "home",
-    "communities",
-    "nearme",
+    // "communities",
+    // "nearme",
     "informations",
     "profile",
   ];
@@ -33,8 +33,8 @@ class _MainNavScreenState extends State<MainNavScreen> {
 
   final List<Widget> _pages = const [
     MyHomePage(),
-    CommunitiesPage(),
-    NearMePage(),
+    // CommunitiesPage(),
+    // NearMePage(),
     InformationPage(),
     ProfilePage(),
   ];
@@ -99,6 +99,24 @@ class _MainNavScreenState extends State<MainNavScreen> {
                       });
                     },
                     icon: Icons.home),
+                // BuildBotton(
+                //     currentIndex: _currentIndex,
+                //     activeIndex: 1,
+                //     ontap: () {
+                //       setState(() {
+                //         _currentIndex = 1;
+                //       });
+                //     },
+                //     icon: Icons.groups),
+                // BuildBotton(
+                //     currentIndex: _currentIndex,
+                //     activeIndex: 2,
+                //     ontap: () {
+                //       setState(() {
+                //         _currentIndex = 2;
+                //       });
+                //     },
+                //     icon: Icons.location_on),
                 BuildBotton(
                     currentIndex: _currentIndex,
                     activeIndex: 1,
@@ -107,31 +125,13 @@ class _MainNavScreenState extends State<MainNavScreen> {
                         _currentIndex = 1;
                       });
                     },
-                    icon: Icons.groups),
+                    icon: Icons.newspaper_rounded),
                 BuildBotton(
                     currentIndex: _currentIndex,
                     activeIndex: 2,
                     ontap: () {
                       setState(() {
                         _currentIndex = 2;
-                      });
-                    },
-                    icon: Icons.location_on),
-                BuildBotton(
-                    currentIndex: _currentIndex,
-                    activeIndex: 3,
-                    ontap: () {
-                      setState(() {
-                        _currentIndex = 3;
-                      });
-                    },
-                    icon: Icons.newspaper_rounded),
-                BuildBotton(
-                    currentIndex: _currentIndex,
-                    activeIndex: 4,
-                    ontap: () {
-                      setState(() {
-                        _currentIndex = 4;
                       });
                     },
                     icon: Icons.perm_identity_sharp),

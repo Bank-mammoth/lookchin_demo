@@ -54,7 +54,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   Future<bool?> checkLogin() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final bool logedin = prefs.getBool(Preference.loggedin) ?? false;
-    print('login +> $logedin');
     return logedin;
   }
 }
